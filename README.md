@@ -12,6 +12,8 @@ Composer yüklü değilse composer paket yükleyicisini yükleyiniz.
     
 - composer install
 
+webpackmix ile tasarım mixlenmiştir. Bundan dolayı npm paket yükleyicisi kullanılmalıdır. Aksi takdirde dosyaları public dosyasına çekilmelidir.
+
 Npm yüklü değilse npm paket yükleyicisini yükleyiniz.
    
 - npm install

@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  case_basket_nginx:
+    image: 'nginx:latest'
+    container_name: basket_nginx
+    hostname: basket_nginx
+    restart: "no"
+    depends_on:
+      - case_basket_php
+    links:
+      - case_basket_php
+    ports:
+      - '8000:80'
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf:rw
+      - ./docker/logs/nginx:/var/logs/nginx:rw
+  case_basket_php:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    container_name: basket_php
+    volumes:
+      - './:/var/www/html'
+    ports:
+      - "9001:9000"
+  case_basket_mysql:
+    image: 'mysql:8.0'
+    container_name: basket_mysql
+    hostname: basket_mysql
+    restart: "no"
+    command: '--default-authentication-plugin=mysql_native_password'
+    ports:
+      - '8512:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: basket_root
+      MYSQL_DATABASE: basket_db
+      MYSQL_USER: basket_user
+      MYSQL_PASSWORD: basket_password
+  case_basket_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: basket_phpmyadmin
+    hostname: basket_phpmyadmin
+    restart: "no"
+    depends_on:
+      - case_basket_mysql
+    links:
+      - case_basket_mysql
+    ports:
+      - '8513:80'
+    environment:
+      - PMA_HOST=basket_mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=basket_root
+    volumes:
+      - './docker/phpmyadmin/php.ini:/usr/local/etc/php/php.ini'

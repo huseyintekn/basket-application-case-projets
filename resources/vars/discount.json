@@ -1,0 +1,19 @@
+{
+    "totalDiscount" : {
+        "discountReason": "Sepet toplamı 1000 TL`yi geçtiği için %10 indirim uygulandı.",
+        "condition" : 1000,
+        "percent" : 10
+    },
+    "categoryBasedOne" :{
+        "discountReason": "2 ID'li kategoriye ait bir üründen 6 adet satın alındığında,1 tanesi ücretsiz olarak verildi.",
+        "category_id" : 2,
+        "condition" : 6,
+        "percent" : 1
+    },
+    "categoryBasedTwo": {
+        "discountReason": "1 ID'li kategoriden iki veya daha fazla ürün satın alındığından, en ucuz ürüne %20 indirim uygulandı.",
+        "category_id" : 1,
+        "condition" : 2,
+        "percent" : 20
+    }
+}

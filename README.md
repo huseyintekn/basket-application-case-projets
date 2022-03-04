@@ -33,10 +33,14 @@ Projede sepete ürün eklenip çıkarılıyor. Sepet sayfasında ürün adet gü
 Ürün eklenirken stok adeti yeterli değilse ürün ekleme işlemi gerçekleşmez.
     
 Sepetteki ürün adeti güncellenirken stok adeti yeterli değilse güncelleme işlemi gerçekleştirilmez.
-    
-Ürün toplam ve Categoru id 1 ve 2 olan ürünler istenilen indirim uygulanmıştır.
 
-Siparişi tamamla  butonuna tıklayarak ürünleri siparişlere ekleyebilir ve sipariş sayfasında ürünleri siparilerimden çıkarabilirsiniz.
+Sepetimden ürünleri çıkarabilirsiniz.
+    
+Ürün toplam ve Karegori id 1 ve 2 olan ürünler istenilen indirim uygulanmıştır.
+
+Siparişi tamamla  butonuna tıklayarak ürünleri siparişler tablosuna eklenir, sepetimdeki tüm ürünler silinir ve ürünler tablosudan stok güncellenir.
+
+Sipariş sayfasında ürünleri siparişlerimden çıkarabilirsiniz.
     
     
 
